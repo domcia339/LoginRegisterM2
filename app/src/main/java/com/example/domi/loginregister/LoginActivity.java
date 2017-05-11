@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 //Opne refister page
-                Intent registerIntent= new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent registerIntent= new Intent(LoginActivity.this, TabbedUser.class);
                 LoginActivity.this.startActivity(registerIntent);
 
             }

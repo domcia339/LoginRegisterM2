@@ -3,6 +3,7 @@ package com.example.domi.loginregister;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -118,6 +119,12 @@ public class TabbedUser extends AppCompatActivity {
                     return tab3;
                 // return "SECTION 3";
             }
+
+            AlertDialog.Builder builder= new AlertDialog.Builder(TabbedUser.this);
+            builder.setMessage("Login failed")
+                    .setNegativeButton("Retry",null)
+                    .create()
+                    .show();
             return null;
         }
 

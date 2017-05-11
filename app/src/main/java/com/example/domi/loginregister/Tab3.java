@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Created by Domi on 10.05.2017.
@@ -35,6 +37,22 @@ public class Tab3 extends Fragment {
                 android.R.layout.simple_list_item_1, menuItems);
 
         listView.setAdapter(listViewAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+            int position, long id){
+
+                if(position==0){
+                    Toast.makeText(getActivity(), "First Item", Toast.LENGTH_SHORT).show();
+                }else if (position==1){
+                    Toast.makeText(getActivity(), "Second Item", Toast.LENGTH_SHORT).show();
+                }else if (position==2){
+                    Toast.makeText(getActivity(), "Third Item", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        });
 
 
         return rootView;

@@ -1,5 +1,6 @@
 package com.example.domi.loginregister;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -44,7 +45,10 @@ public class Tab3 extends Fragment {
             int position, long id){
 
                 if(position==0){
-                    Toast.makeText(getActivity(), "First Item", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "First Item", Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), ListOfActivity.class);
+                    startActivity(intent);
+
                 }else if (position==1){
                     Toast.makeText(getActivity(), "Second Item", Toast.LENGTH_SHORT).show();
                 }else if (position==2){

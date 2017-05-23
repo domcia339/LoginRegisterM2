@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -38,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 //Opne refister page
-                Intent registerIntent= new Intent(LoginActivity.this, TabbedUser.class);
+                Intent registerIntent= new Intent(LoginActivity.this, RegisterActivity.class);
                 LoginActivity.this.startActivity(registerIntent);
 
             }
@@ -62,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
                             if(success){
                                 String name= jsonResponse.getString("name");
                                 String surname=jsonResponse.getString("surname");
+
+
 
                                 Intent intent= new Intent(LoginActivity.this, TabbedUser.class);
                                 intent.putExtra("name", name);

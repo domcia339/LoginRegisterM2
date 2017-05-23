@@ -29,7 +29,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.domi.loginregister.UserAreaActivity" />
         </activity>
-        <activity android:name=".ListOfActivity"></activity>
+        <activity android:name=".ListOfActivity" />
+        <activity android:name=".ListOfSmallActivity"></activity>
     </application>
 
 </manifest>

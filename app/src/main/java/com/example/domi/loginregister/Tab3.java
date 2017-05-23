@@ -23,42 +23,53 @@ import android.widget.Toast;
 public class Tab3 extends Fragment {
 
 
-    public  Tab3(){
+    public Tab3() {
 
     }
 
+    public Tables tables = new Tables();
+
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab3, container, false);
-        String[] menuItems= {"lala", "kkkkkk", "jjjjjj"};
 
-        ListView listView= (ListView) rootView.findViewById(R.id.mainMenu);
+        ListView listView = (ListView) rootView.findViewById(R.id.mainMenu); //mainMenu in xml
 
-        ArrayAdapter<String> listViewAdapter= new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1, menuItems);
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                tables.menuItems
+        );
 
         listView.setAdapter(listViewAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
-            int position, long id){
+                                    int position, long id){
 
                 if(position==0){
-                    //Toast.makeText(getActivity(), "First Item", Toast.LENGTH_SHORT).show();
-                    Intent intent= new Intent(getActivity(), ListOfActivity.class);
+                    tables.postab3=position;
+                    Toast.makeText(getActivity(), "First Item"+ tables.postab3, Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
                     startActivity(intent);
 
                 }else if (position==1){
-                    Toast.makeText(getActivity(), "Second Item", Toast.LENGTH_SHORT).show();
+                    tables.postab3=position;
+                    Toast.makeText(getActivity(), "Second Item"+ tables.postab3, Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    startActivity(intent);
                 }else if (position==2){
-                    Toast.makeText(getActivity(), "Third Item", Toast.LENGTH_SHORT).show();
+                    tables.postab3=position;
+                    Toast.makeText(getActivity(), "Third Item"+ tables.postab3, Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(getActivity(), ListOfSmallActivity.class);
+                    startActivity(intent);
                 }
             }
 
         });
-
-
         return rootView;
     }
 

@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * Created by Domi on 10.05.2017.
@@ -12,10 +14,28 @@ import android.view.ViewGroup;
 
 public class Tab2 extends Fragment {
 
+    public Tab2() {
+    }
+
+    public Tables tables = new Tables();
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.tab2, container, false);
+        View rootView = inflater.inflate(R.layout.tab3, container, false);
+
+        ListView listView = (ListView) rootView.findViewById(R.id.mainMenu); //mainMenu in xml
+
+        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
+                getActivity(),
+                android.R.layout.simple_list_item_1,
+                tables.vector
+        );
+
+
+        listView.setAdapter(listViewAdapter);
+
         return rootView;
     }
 }
